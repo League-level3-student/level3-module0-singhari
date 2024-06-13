@@ -1,6 +1,7 @@
 package _00_Intro_To_Arrays;
 
 import java.util.Random;
+import java.lang.*;
 
 import javax.swing.JOptionPane;
 
@@ -15,7 +16,8 @@ public class _02_RobotRace {
         // 3. use a for loop to initialize the robots.
     	for(int i = 0; i < robs.length; i++) {
     		robs[i] = new Robot();
-    		robs[i].setY(200);
+    		robs[i].setY(530);
+    		robs[i].setX(70+(100*i));
     	}
         // 4. make each robot start at the bottom of the screen, side by side, facing up
     	Random ran = new Random();
@@ -23,11 +25,11 @@ public class _02_RobotRace {
         // a random amount less than 50.
     	while(!someoneWon) {
     for(int i =0; i < robs.length; i++) {
-    	robs[i].setY(robs[i].getY()+ran.nextInt(50));
-    	if(robs[i].getY() > 300) {
+    	robs[i].setY(robs[i].getY()-ran.nextInt(50));
+    	if(robs[i].getY() < 20) {
     		someoneWon = true;
-    		i = robs.length;
     		System.out.println("Robot " + (i+1)+ " is the winner!");
+    		i = robs.length;
     	}
     }
     	}
