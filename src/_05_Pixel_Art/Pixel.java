@@ -7,7 +7,7 @@ public class Pixel{
     public int y;
     public Color color;
 
-    public Pixel(int x, int y) {
+    public Pixel(int y, int x) {
         this.x = x;
         this.y = y;
         color = Color.WHITE;
